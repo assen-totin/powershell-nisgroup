@@ -9,13 +9,13 @@
 #
 #   makensis this_script
 #
-# which will generate the output file 'AddUnixAttributes.exe' which is a Windows
+# which will generate the output file 'AddNisGroup.exe' which is a Windows
 # installer containing your program.
 
-Name "AddUnixAttributes"
-OutFile "AddUnixAttributes.exe"
+Name "AddNisGroup"
+OutFile "AddNisGroup.exe"
 InstallDir "$ProgramFiles64\WindowsPowerShell\Modules"
-InstallDirRegKey HKLM SOFTWARE\AddUnixAttributes "Install_Dir"
+InstallDirRegKey HKLM SOFTWARE\AddNisGroup "Install_Dir"
 
 ShowInstDetails hide
 ShowUninstDetails hide
@@ -34,24 +34,24 @@ Page instfiles
 
 #DirText "Please select the installation folder."
 
-Section "AddUnixAttributes"
+Section "AddNisGroup"
   SectionIn RO
 
   SetOutPath "$INSTDIR\."
-  File /r "AddUnixAttributes"
+  File /r "AddNisGroup"
 SectionEnd
 
 #Section "Start Menu Shortcuts"
-#  CreateDirectory "$SMPROGRAMS\AddUnixAttributes"
-#  CreateShortCut "$SMPROGRAMS\AddUnixAttributes\Uninstall AddUnixAttributes.lnk" "$INSTDIR\Uninstall AddUnixAttributes.exe" "" "$INSTDIR\Uninstall AddUnixAttributes.exe" 0
+#  CreateDirectory "$SMPROGRAMS\AddNisGroup"
+#  CreateShortCut "$SMPROGRAMS\AddNisGroup\Uninstall AddNisGroup.lnk" "$INSTDIR\Uninstall AddNisGroup.exe" "" "$INSTDIR\Uninstall AddNisGroup.exe" 0
 #SectionEnd
 
 #Section "Desktop Icons"
 #SectionEnd
 
 Section "Uninstall"
-#  Delete /rebootok "$SMPROGRAMS\AddUnixAttributes\Uninstall AddUnixAttributes.lnk"
-#  RMDir "$SMPROGRAMS\AddUnixAttributes"
+#  Delete /rebootok "$SMPROGRAMS\AddNisGroup\Uninstall AddNisGroup.lnk"
+#  RMDir "$SMPROGRAMS\AddNisGroup"
 
   RMDir /r "$INSTDIR\.\"
 
@@ -59,6 +59,6 @@ Section "Uninstall"
 SectionEnd
 
 Section -post
-  WriteUninstaller "$INSTDIR\Uninstall AddUnixAttributes.exe"
+  WriteUninstaller "$INSTDIR\Uninstall AddNisGroup.exe"
 SectionEnd
 
